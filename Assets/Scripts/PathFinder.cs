@@ -11,6 +11,7 @@ public class PathFinder : MonoBehaviour {
     Queue<Waypoint> queue = new Queue<Waypoint>();
     List<Waypoint> path = new List<Waypoint>();
 
+
     Waypoint searchCenter;
 
     bool isRunning = true;
@@ -22,20 +23,26 @@ public class PathFinder : MonoBehaviour {
         Vector2Int.down
         };
 
-    // Use this for initialization
-    void Start ()
+
+ 
+
+    public List<Waypoint> GetPath()
+    {
+        if (path.Count == 0)
+        {
+            CalculatePath();
+
+        }
+
+        return path;
+    }
+
+    private void CalculatePath()
     {
         LoadBlocks();
         ColorStartAndEnd();
         BreadthFirstSearch();
         CreatePath();
-        //ExploreNeighbours();
-        
-    }
-
-    public List<Waypoint> GetPath()
-    {
-        return path;
     }
 
     private void CreatePath()
@@ -67,7 +74,7 @@ public class PathFinder : MonoBehaviour {
     {
         if (searchCenter == endWaypoint)
         {
-            print("Found");
+            //print("Found");
             isRunning = false;
         }
     }
@@ -100,7 +107,7 @@ public class PathFinder : MonoBehaviour {
             //neighbour.SetTopColor(Color.blue);
             queue.Enqueue(neighbour);
             neighbour.exploredFrom = searchCenter;
-            print("queuing neighbour " + neighbour);
+            //print("queuing neighbour " + neighbour);
         }
     }
 
@@ -127,7 +134,7 @@ public class PathFinder : MonoBehaviour {
             }
             
         }
-        print(grid.Count);
+        //print(grid.Count);
     }
 
     // Update is called once per frame

@@ -11,8 +11,8 @@ public class EnemyMovement : MonoBehaviour {
     {
         PathFinder pathfinder = FindObjectOfType<PathFinder>();
         var path = pathfinder.GetPath();
-        
 
+        print(path);
         StartCoroutine(FollowPath(path));
     }
 
@@ -20,11 +20,16 @@ public class EnemyMovement : MonoBehaviour {
 
     IEnumerator FollowPath(List<Waypoint> path)
     {
+        
         foreach (Waypoint waypoint in path)
         {
+            
             transform.position = waypoint.transform.position;
+            
             yield return new WaitForSeconds(1f);
+            
         }
+        
     }
 
 
