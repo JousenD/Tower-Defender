@@ -6,6 +6,9 @@ public class Waypoint : MonoBehaviour {
 
     public Waypoint exploredFrom;
     public bool isExplored = false;
+    public bool isPlaceable = true;
+
+    [SerializeField] Tower towerPrefab;
 
     Vector2Int gridPos;
     const int gridSize = 10;
@@ -29,6 +32,24 @@ public class Waypoint : MonoBehaviour {
             Mathf.RoundToInt(transform.position.z / gridSize)
             );
        }
+
+    private void OnMouseOver()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (isPlaceable)
+            {
+                Instantiate(towerPrefab, transform.position, Quaternion.identity);
+                isPlaceable = false;
+            }
+            else
+            {
+                print(gameObject.name + " is not placeable");
+            }
+            
+        }
+
+    }
 
     public void SetTopColor(Color color)
     {

@@ -66,10 +66,9 @@ public class Tower : MonoBehaviour {
         if (Mathf.Abs(distanceToEnemy) <= attackRange)
         {
             Shoot(true);
-            print("close");
         }
         else {
-            print("far");
+
             Shoot(false);
 
         }
