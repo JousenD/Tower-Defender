@@ -5,6 +5,8 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour {
 
     [SerializeField] List<Waypoint> path;
+    [SerializeField] float enemyMoveSpeed = 0.5f;
+    [SerializeField] ParticleSystem goalParticle;
 
 	// Use this for initialization
 	void Start ()
@@ -26,11 +28,19 @@ public class EnemyMovement : MonoBehaviour {
             
             transform.position = waypoint.transform.position;
             
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(enemyMoveSpeed);
             
         }
-        
+        SelfDestruct();
     }
 
+    private void SelfDestruct()
+    {
+        ParticleSystem deathParticle = Instantiate(goalParticle, transform.position, Quaternion.identity);
+        deathParticle.Play();
+
+        Destroy(deathParticle.gameObject, deathParticle.main.duration);
+        Destroy(gameObject);
+    }
 
 }

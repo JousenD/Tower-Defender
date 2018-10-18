@@ -9,6 +9,9 @@ public class Tower : MonoBehaviour {
     private ParticleSystem projectileParticle;
     [SerializeField] Transform objectToPan;
 
+    public Waypoint baseWaypoint;
+   
+
 
 
 

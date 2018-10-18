@@ -230,6 +230,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackRange: 100
   objectToPan: {fileID: 4445613683161418}
+  baseWaypoint: {fileID: 0}
 --- !u!198 &198332086762731402
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -362,7 +363,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 100
+      scalar: 300
       minScalar: 5
       maxCurve:
         serializedVersion: 2
