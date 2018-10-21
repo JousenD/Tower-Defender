@@ -390,8 +390,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 15.000004, y: 14, z: 13.000003}
-  m_Center: {x: 0, y: 7, z: 0}
+  m_Size: {x: 22.08634, y: 22.26693, z: 22.251936}
+  m_Center: {x: 3.5431657, y: 8.262428, z: 0.6721317}
 --- !u!82 &82342688205216540
 AudioSource:
   m_ObjectHideFlags: 1
@@ -499,7 +499,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collisionMesh: {fileID: 0}
-  hitPoints: 2
+  hitPoints: 10
   hitParticlesPrefab: {fileID: 198205966690253690}
   deathParticlesPrefab: {fileID: 198537984209914932, guid: 1a51bfda454239a41afb7dee687c6ac0,
     type: 2}
@@ -517,7 +517,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   path: []
-  enemyMoveSpeed: 0.5
+  enemyMoveSpeed: 0.3
   goalParticle: {fileID: 198537984209914932, guid: 1820941e33add9a45b5e20c507142548,
     type: 2}
 --- !u!198 &198051237521758964
